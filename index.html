@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>From JS to React</title>
+    </head>
+    <body>
+        <!-- Root element for our app -->
+        <div id="app"></div>
+        <!-- Starting with vanilla JS for adding an h1 tag to our project -->
+        <script type="text/javascript">
+            // Select the div element with 'app' id
+            const app = document.getElementById('app');
+            // Create a new h1 element
+            const header = document.createElement('h1');
+            // Create a new text node for the h1 element
+            const headerContent = document.createTextNode('Develop. Preview. Ship. 🚀');
+            // Append the text to h1 element
+            header.appendChild(headerContent);
+            // Place the h1 element inside div
+            app.appendChild(header);
+        </script>
+    </body>
+</html>
