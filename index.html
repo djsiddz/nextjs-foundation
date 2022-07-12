@@ -15,14 +15,28 @@
         <script type="text/jsx">
             // Select the div element with 'app' id
             const app = document.getElementById('app');
-            // Create our first React Component
+            // Nesting Components Header & Footer in Homepage
+            function Homepage() {
+                // Nesting Header using React Fragment
+                return <>
+                    <Header />
+                    {/*
+                        You can nest regular html also, however remember you are still writing in JSX.
+                        That's why the style is written differently than you would in plain html.
+                    */}
+                    <div style={{height:"500px"}}></div>
+                    <Footer />
+                </>;
+            }
             function Header() {
                 return <h1>Develop. Preview. Ship. 🚀</h1>;
             }
-            // Replacing deprecated React DOM render method with createRoot method as per React 18 to add h1 element to our app
-            // Otherwise our app would behave as if it's running React 17
+            function Footer() {
+                return <p>Made with hot ☕ by <a href="https://github.com/djsiddz">Siddhesh Thadeshwar</a></p>
+            }
+            // Using React DOM createRoot method as per React 18 to add h1 element to our app
             const root = ReactDOM.createRoot(app);
-            root.render(<Header />);
+            root.render(<Homepage />);
         </script>
     </body>
 </html>
