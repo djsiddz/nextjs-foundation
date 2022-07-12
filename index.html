@@ -2,6 +2,15 @@
 <html>
     <head>
         <title>From JS to React</title>
+        <style>
+            .articleCard {
+                padding: 20px;
+                margin: 10px;
+                max-width: 200px;
+                display: inline-block;
+                background-color: lightblue;
+            }
+        </style>
     </head>
     <body>
         <!-- Root element for our app -->
@@ -25,6 +34,7 @@
                         That's why the style is written differently than you would in plain html.
                     */}
                     <div style={{height:"500px"}}>
+                        <h2>Tutorials</h2>
                         <Article title="Learning React" />
                         <Article title="Learning NextJS" />
                         <Article />
@@ -36,7 +46,9 @@
                 return <h1>Develop. Preview. Ship. 🚀</h1>;
             }
             function Article(props) {
-                return <h3>{props.title ? props.title : "To Be Announced..."}</h3>;
+                return <div className="articleCard">
+                    <h3>{props.title ? props.title : "To Be Announced..."}</h3>
+                </div>;
             }
             function Footer() {
                 return <p>Made with hot ☕ by <a href="https://github.com/djsiddz">Siddhesh Thadeshwar</a></p>
