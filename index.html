@@ -26,7 +26,8 @@
             const app = document.getElementById('app');
             // Nesting Components Header & Footer in Homepage
             function Homepage() {
-                // Nesting Header using React Fragment
+                const popularTechnologies = ["JavaScript", "TypeScript", "React", "Angular", "Python", "Ruby on Rails"];
+                // Nesting using React Fragment
                 return <>
                     <Header />
                     {/*
@@ -34,6 +35,13 @@
                         That's why the style is written differently than you would in plain html.
                     */}
                     <div style={{height:"500px"}}>
+                        <h2>Popular Technologies</h2>
+                        <ul>
+                            {popularTechnologies.map((tech) => (
+                                <li key={tech}>{tech}</li>
+                            ))}
+                        </ul>
+                        <hr/>
                         <h2>Tutorials</h2>
                         <Article title="Learning React" />
                         <Article title="Learning NextJS" />
