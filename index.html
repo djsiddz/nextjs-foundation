@@ -6,18 +6,17 @@
     <body>
         <!-- Root element for our app -->
         <div id="app"></div>
-        <!-- Starting with vanilla JS for adding an h1 tag to our project -->
-        <script type="text/javascript">
+        <!-- Replace vanilla JS with React to add an h1 tag to our project -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <!-- Adding babel to transfrom JSX to javascript -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <!-- We need to inform Babel what code it should transform, so we change type from 'text/javascript' to 'text/jsx' -->
+        <script type="text/jsx">
             // Select the div element with 'app' id
             const app = document.getElementById('app');
-            // Create a new h1 element
-            const header = document.createElement('h1');
-            // Create a new text node for the h1 element
-            const headerContent = document.createTextNode('Develop. Preview. Ship. 🚀');
-            // Append the text to h1 element
-            header.appendChild(headerContent);
-            // Place the h1 element inside div
-            app.appendChild(header);
+            // Using React DOM render method to add h1 element to our app
+            ReactDOM.render(<h1>Develop. Preview. Ship. 🚀</h1>, app);
         </script>
     </body>
 </html>
