@@ -27,6 +27,12 @@
             // Nesting Components Header & Footer in Homepage
             function Homepage() {
                 const popularTechnologies = ["JavaScript", "TypeScript", "React", "Angular", "Python", "Ruby on Rails"];
+                const [likes, setLikes] = React.useState(0);
+
+                function handleClick() {
+                    console.log('increment like count');
+                    setLikes(likes+1);
+                }
                 // Nesting using React Fragment
                 return <>
                     <Header />
@@ -41,6 +47,7 @@
                                 <li key={tech}>{tech}</li>
                             ))}
                         </ul>
+                        <button onClick={handleClick}>👍 {likes} Likes</button>
                         <hr/>
                         <h2>Tutorials</h2>
                         <Article title="Learning React" />
