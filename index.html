@@ -15,8 +15,12 @@
         <script type="text/jsx">
             // Select the div element with 'app' id
             const app = document.getElementById('app');
+            // Create our first React Component
+            function Header() {
+                return <h1>Develop. Preview. Ship. 🚀</h1>;
+            }
             // Using React DOM render method to add h1 element to our app
-            ReactDOM.render(<h1>Develop. Preview. Ship. 🚀</h1>, app);
+            ReactDOM.render(<Header />, app);
         </script>
     </body>
 </html>
