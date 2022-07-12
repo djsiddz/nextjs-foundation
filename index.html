@@ -24,12 +24,19 @@
                         You can nest regular html also, however remember you are still writing in JSX.
                         That's why the style is written differently than you would in plain html.
                     */}
-                    <div style={{height:"500px"}}></div>
+                    <div style={{height:"500px"}}>
+                        <Article title="Learning React" />
+                        <Article title="Learning NextJS" />
+                        <Article />
+                    </div>
                     <Footer />
                 </>;
             }
             function Header() {
                 return <h1>Develop. Preview. Ship. 🚀</h1>;
+            }
+            function Article(props) {
+                return <h3>{props.title ? props.title : "To Be Announced..."}</h3>;
             }
             function Footer() {
                 return <p>Made with hot ☕ by <a href="https://github.com/djsiddz">Siddhesh Thadeshwar</a></p>
