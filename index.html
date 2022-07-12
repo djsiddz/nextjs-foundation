@@ -19,8 +19,10 @@
             function Header() {
                 return <h1>Develop. Preview. Ship. 🚀</h1>;
             }
-            // Using React DOM render method to add h1 element to our app
-            ReactDOM.render(<Header />, app);
+            // Replacing deprecated React DOM render method with createRoot method as per React 18 to add h1 element to our app
+            // Otherwise our app would behave as if it's running React 17
+            const root = ReactDOM.createRoot(app);
+            root.render(<Header />);
         </script>
     </body>
 </html>
